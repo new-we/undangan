@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andi &amp; Putri — Undangan Pernikahan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#5a7a5a; --sage-dark:#3f5c3f; --gold:#b8934a; --gold-light:#e8c877;
+    --cream:#faf7f0; --ink:#2e2e2e; --muted:#777;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden}
+  .serif{font-family:'Playfair Display',serif}
+  section{padding:64px 24px;max-width:640px;margin:0 auto;text-align:center}
+  .label{letter-spacing:4px;text-transform:uppercase;font-size:12px;color:var(--gold);margin-bottom:12px}
+  h2{font-family:'Playfair Display',serif;font-size:30px;color:var(--sage-dark);margin-bottom:8px}
+  .divider{width:60px;height:2px;background:var(--gold);margin:16px auto}
+  p{color:var(--muted);font-size:15px}
+
+  /* cover */
+  #cover{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:linear-gradient(160deg,#3f5c3f 0%,#5a7a5a 60%,#6d8a6d 100%);color:#fff;transition:opacity .8s,visibility .8s}
+  #cover.hide{opacity:0;visibility:hidden}
+  #cover .fl{font-size:44px;margin-bottom:8px}
+  #cover h1{font-family:'Playfair Display',serif;font-size:38px;margin:8px 0}
+  #cover p{color:#e8f0e8;font-size:14px;letter-spacing:2px}
+  #openBtn{margin-top:28px;background:var(--gold);color:#fff;border:none;padding:14px 42px;font-size:15px;letter-spacing:2px;
+    border-radius:40px;cursor:pointer;font-family:'Jost',sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  #openBtn:active{transform:scale(.97)}
+
+  /* hero */
+  #hero{background:linear-gradient(180deg,#f3efe4 0%,var(--cream) 100%);padding-top:80px}
+  #hero .names{font-family:'Playfair Display',serif;font-size:44px;color:var(--sage-dark);line-height:1.25}
+  #hero .amp{font-style:italic;color:var(--gold);font-size:34px}
+  #hero .date{margin-top:16px;font-size:17px;letter-spacing:3px;color:var(--sage)}
+
+  /* countdown */
+  .cd{display:flex;justify-content:center;gap:12px;margin-top:24px}
+  .cd div{background:#fff;border:1px solid #e5ddc8;border-radius:12px;padding:12px 0;width:72px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+  .cd b{display:block;font-family:'Playfair Display',serif;font-size:26px;color:var(--sage-dark)}
+  .cd span{font-size:11px;letter-spacing:2px;color:var(--muted)}
+
+  /* couple */
+  .person{background:#fff;border-radius:16px;padding:28px 20px;margin:16px 0;box-shadow:0 6px 20px rgba(90,122,90,.10);border-top:3px solid var(--gold)}
+  .avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--sage),var(--gold-light));
+    display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:34px;color:#fff;margin:0 auto 12px}
+  .person h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--sage-dark)}
+  .person p{font-size:14px}
+
+  /* event */
+  .card{background:#fff;border-radius:16px;padding:28px 20px;margin:16px 0;box-shadow:0 6px 20px rgba(90,122,90,.10)}
+  .card h3{font-family:'Playfair Display',serif;color:var(--sage-dark);font-size:22px;margin-bottom:6px}
+  .btn{display:inline-block;margin-top:14px;background:var(--sage);color:#fff;text-decoration:none;padding:12px 30px;border-radius:30px;font-size:14px;letter-spacing:1px}
+  .btn.gold{background:var(--gold)}
+
+  /* gallery */
+  .gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+  .gal div{aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,#dfe8df,#f3ead0);
+    display:flex;align-items:center;justify-content:center;color:var(--sage);font-size:13px;letter-spacing:1px}
+
+  /* rsvp */
+  input,select,textarea{width:100%;padding:12px 14px;margin:8px 0;border:1px solid #ddd;border-radius:10px;font-family:'Jost',sans-serif;font-size:14px;background:#fff}
+  #rsvpBtn{width:100%;background:var(--gold);color:#fff;border:none;padding:14px;border-radius:30px;font-size:15px;letter-spacing:2px;cursor:pointer;margin-top:8px}
+
+  /* gift */
+  .rek{background:var(--sage-dark);color:#fff;border-radius:14px;padding:20px;margin:12px 0}
+  .rek b{font-size:20px;letter-spacing:2px}
+  .copy{background:var(--gold);border:none;color:#fff;padding:8px 22px;border-radius:20px;margin-top:10px;cursor:pointer;font-size:13px}
+
+  footer{background:var(--sage-dark);color:#e8f0e8;padding:40px 24px;text-align:center;font-size:14px}
+  footer .serif{font-size:24px;color:#fff;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div id="cover">
+  <div class="fl">&#10087;</div>
+  <p>UNDANGAN PERNIKAHAN</p>
+  <h1>Andi &amp; Putri</h1>
+  <p>SABTU, 20 DESEMBER 2026</p>
+  <button id="openBtn" onclick="document.getElementById('cover').classList.add('hide');window.scrollTo(0,0)">BUKA UNDANGAN</button>
+</div>
+
+<section id="hero">
+  <div class="label">Assalamu'alaikum Wr. Wb.</div>
+  <p>Dengan memohon rahmat dan ridha Allah SWT, kami bermaksud menyempurnakan separuh agama kami:</p>
+  <div style="margin-top:28px" class="names">Andi Pratama<br><span class="amp">&amp;</span><br>Putri Ayu Lestari</div>
+  <div class="date">SABTU, 20 DESEMBER 2026</div>
+  <div class="cd" id="countdown">
+    <div><b id="d">0</b><span>HARI</span></div>
+    <div><b id="h">0</b><span>JAM</span></div>
+    <div><b id="m">0</b><span>MENIT</span></div>
+    <div><b id="s">0</b><span>DETIK</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="label">Mempelai</div>
+  <h2>Dua Hati, Satu Tujuan</h2>
+  <div class="divider"></div>
+  <div class="person">
+    <div class="avatar">A</div>
+    <h3>Andi Pratama</h3>
+    <p>Putra dari Bapak H. Bambang Sutrisno<br>&amp; Ibu Hj. Siti Aminah</p>
+  </div>
+  <div class="person">
+    <div class="avatar">P</div>
+    <h3>Putri Ayu Lestari</h3>
+    <p>Putri dari Bapak H. Agus Wijaya<br>&amp; Ibu Hj. Rina Marlina</p>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="label">Waktu &amp; Tempat</div>
+  <h2>Save The Date</h2>
+  <div class="divider"></div>
+  <div class="card">
+    <h3>Akad Nikah</h3>
+    <p>Sabtu, 20 Desember 2026<br>Pukul 08.00 WIB</p>
+    <p style="margin-top:8px">Gedung Serbaguna Sidoarjo<br>Jl. Raya Taman Sidoarjo</p>
+  </div>
+  <div class="card">
+    <h3>Resepsi</h3>
+    <p>Sabtu, 20 Desember 2026<br>Pukul 11.00 – 13.00 WIB</p>
+    <p style="margin-top:8px">Gedung Serbaguna Sidoarjo<br>Jl. Raya Taman Sidoarjo</p>
+    <a class="btn" href="https://maps.google.com/?q=Gedung+Serbaguna+Sidoarjo" target="_blank">LIHAT LOKASI</a>
+  </div>
+</section>
+
+<section>
+  <div class="label">Momen Bahagia</div>
+  <h2>Galeri</h2>
+  <div class="divider"></div>
+  <div class="gal">
+    <div>FOTO 1</div><div>FOTO 2</div><div>FOTO 3</div><div>FOTO 4</div>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="label">Konfirmasi</div>
+  <h2>RSVP Kehadiran</h2>
+  <div class="divider"></div>
+  <p>Mohon konfirmasi kehadiran Anda melalui form berikut:</p>
+  <div style="margin-top:16px;text-align:left">
+    <input id="nama" placeholder="Nama lengkap">
+    <select id="hadir">
+      <option value="Hadir">Insya Allah Hadir</option>
+      <option value="Berhalangan">Berhalangan</option>
+    </select>
+    <textarea id="ucapan" rows="3" placeholder="Tulis ucapan & doa untuk mempelai..."></textarea>
+    <button id="rsvpBtn" onclick="kirimRSVP()">KIRIM VIA WHATSAPP</button>
+  </div>
+</section>
+
+<section>
+  <div class="label">Tanda Kasih</div>
+  <h2>Amplop Digital</h2>
+  <div class="divider"></div>
+  <p>Doa restu Anda adalah hadiah terindah. Namun jika berkenan memberi tanda kasih:</p>
+  <div class="rek">
+    <div style="font-size:13px;letter-spacing:2px;margin-bottom:6px">BCA</div>
+    <b id="norek">8210 1234 5678</b><br>
+    <span style="font-size:14px">a.n. Andi Pratama</span><br>
+    <button class="copy" onclick="navigator.clipboard.writeText('821012345678');this.textContent='TERSALIN!'">SALIN NOMOR</button>
+  </div>
+</section>
+
+<section>
+  <div class="label">Terima Kasih</div>
+  <h2>Sampai Jumpa di Hari Bahagia</h2>
+  <div class="divider"></div>
+  <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
+  <p style="margin-top:16px" class="serif">Andi &amp; Putri</p>
+</section>
+
+<footer>
+  <div class="serif">A &amp; P</div>
+  <p>20 . 12 . 2026</p>
+  <p style="margin-top:12px;font-size:12px;opacity:.7">Dibuat dengan cinta oleh Aditya Apps</p>
+</footer>
+
+<script>
+  // Countdown ke 20 Desember 2026 pukul 08:00 WIB
+  const target = new Date('2026-12-20T08:00:00+07:00').getTime();
+  setInterval(function(){
+    const now = new Date().getTime();
+    let diff = Math.max(0, target - now);
+    document.getElementById('d').textContent = Math.floor(diff/864e5);
+    document.getElementById('h').textContent = Math.floor(diff%864e5/36e5);
+    document.getElementById('m').textContent = Math.floor(diff%36e5/6e4);
+    document.getElementById('s').textContent = Math.floor(diff%6e4/1e3);
+  }, 1000);
+
+  function kirimRSVP(){
+    const nama = document.getElementById('nama').value || '(tanpa nama)';
+    const hadir = document.getElementById('hadir').value;
+    const ucapan = document.getElementById('ucapan').value || '-';
+    const pesan = 'Halo, saya ' + nama + '.\nKonfirmasi: ' + hadir + '\nUcapan: ' + ucapan;
+    window.open('https://wa.me/6288905579037?text=' + encodeURIComponent(pesan), '_blank');
+  }
+</script>
+</body>
+</html>
